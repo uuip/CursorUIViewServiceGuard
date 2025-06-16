@@ -56,11 +56,6 @@ fn is_process_unresponsive(pid: u32) -> bool {
 fn kill_process(pid: u32) {
     let _ = signal::kill(Pid::from_raw(pid as i32), Signal::SIGKILL);
 }
-// const SIDL: u32 = 1;     // 进程正被 fork 创建
-// const SRUN: u32 = 2;     // 当前可运行
-// const SSLEEP: u32 = 3;   // 在某地址上睡眠
-// const SSTOP: u32 = 4;    // 进程调试或挂起
-// const SZOMB: u32 = 5;    // 等待被父进程回收
 
 fn main() {
     env_logger::builder()
