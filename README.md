@@ -10,31 +10,9 @@
 
 ## 构建
 
-### Rust 版本
 ```bash
 cargo build --release
 ```
-
-## 运行
-
-### Rust 版本
-```bash
-cargo run --release
-```
-
-## 系统要求
-
-- macOS 系统
-- 对于 Rust 版本：Rust 1.70+
-
-## 工作原理
-
-程序通过以下步骤工作：
-
-1. 搜索名为 `CursorUIViewService` 的进程
-2. 使用 macOS 系统 API `CGSEventIsAppUnresponsive` 检测进程响应状态
-3. 如果检测到进程无响应，发送 `SIGKILL` 信号终止进程
-4. 循环监测，确保 Cursor 编辑器始终保持响应状态
 
 ## 注意事项
 
